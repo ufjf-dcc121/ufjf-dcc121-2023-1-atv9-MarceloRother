@@ -6,8 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana 9: Forms</title>
     <style>
-        p>span{
+        .pessoa > .idade {
+            color: darkred;
+        }
+        .pessoa > div{
             color: darkgreen;
+            display: inline;
+        }
+        div.sobrenome {
+            color: darkblue;
+        }
+        
+        .pessoa > .sobrenome::before{
+            content: ' ';
+        }
+        .idade::before{
+            color: black;
+            content: ', ' ;
         }
     </style>
 </head>
@@ -58,19 +73,19 @@
                 const divPessoa = document.createElement('div');
                 divPessoa.classList.add("pessoa");
 
-                const spanNome = document.createElement('span');
+                const spanNome = document.createElement('div');
                 spanNome.classList.add('nome');
                 spanNome.textContent = nome;
                 divPessoa.appendChild(spanNome);
 
-                const spanSobrenome = document.createElement('span');
-                spanNome.classList.add('sobrenome');
-                spanNome.textContent = sobrenome;
+                const spanSobrenome = document.createElement('div');
+                spanSobrenome.classList.add('sobrenome');
+                spanSobrenome.textContent = sobrenome;
                 divPessoa.appendChild(spanSobrenome);
 
-                const spanIdade = document.createElement('span');
-                spanNome.classList.add('idade');
-                spanNome.textContent = idade;
+                const spanIdade = document.createElement('div');
+                spanIdade.classList.add('idade');
+                spanIdade.textContent = idade;
                 divPessoa.appendChild(spanIdade);
 
 
